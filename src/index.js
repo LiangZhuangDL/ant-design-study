@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import ButtonComponents from "./general/ButtonComponents";
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<ButtonComponents />, document.getElementById('root'));
 registerServiceWorker();
