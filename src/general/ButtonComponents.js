@@ -17,14 +17,27 @@ const style ={
     padding: '10px 10px 10px 10px'
 };
 
+const ghostStyle = {
+    backgroundColor: 'gray',
+    padding: '10px 10px 10px 10px'
+};
+
 class ButtonComponents extends React.Component{
-    state = {
-        loading: false,
-        iconLoading: false
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            loading: false,
+            iconLoading: false
+        };
+        this.enterLoad = this.enterLoad.bind(this);
+        this.enterIconLoading = this.enterIconLoading.bind(this);
+    }
+
 
     enterLoad(){
+        console.info(this.state.loading);
         this.setState({ loading: true});
+        console.info(this.state.loading);
     }
 
     enterIconLoading(){
@@ -56,8 +69,8 @@ class ButtonComponents extends React.Component{
                 </Card><br/>
                 <Card title='加载中状态' style={style}>
                     <Button htmlType='button' type='primary' loading>Loading</Button><br/><br/>
-                    <Button htmlType='button' type='primary' loading={this.state.loading} onClick={this.enterLoad.bind(this)}>Click me</Button><br/><br/>
-                    <Button htmlType='button' type='primary' loading={this.state.iconLoading} onClick={this.enterIconLoading.bind(this)} icon='poweroff'>Click me</Button>
+                    <Button htmlType='button' type='primary' loading={this.state.loading} onClick={this.enterLoad}>Click me</Button><br/><br/>
+                    <Button htmlType='button' type='primary' loading={this.state.iconLoading} onClick={this.enterIconLoading} icon='poweroff'>Click me</Button>
                 </Card><br/>
                 <Card title='多按钮组合' style={style}>
                     <Dropdown overlay={menu}>
@@ -67,10 +80,12 @@ class ButtonComponents extends React.Component{
                     </Dropdown>
                 </Card><br/>
                 <Card title='幽灵按钮' style={style}>
-                    <Button type="primary" ghost htmlType='button'>Primary</Button>
-                    <Button ghost htmlType='button'>Default</Button>
-                    <Button type="dashed" ghost htmlType='button'>Dashed</Button>
-                    <Button type="danger" ghost htmlType='button'>danger</Button>
+                    <div style={ghostStyle}>
+                        <Button type="primary" ghost htmlType='button'>Primary</Button>
+                        <Button ghost htmlType='button'>Default</Button>
+                        <Button type="dashed" ghost htmlType='button'>Dashed</Button>
+                        <Button type="danger" ghost htmlType='button'>danger</Button>
+                    </div>
                 </Card>
             </div>
         );

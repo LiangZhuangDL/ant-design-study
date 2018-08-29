@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
-import ButtonComponents from "./general/ButtonComponents";
+// import IconComponents from "./general/IconComponents";
+// import ButtonComponents from "./general/ButtonComponents";
+import GridComponents from "./layout/GridComponents";
 
-ReactDOM.render(<ButtonComponents />, document.getElementById('root'));
+ReactDOM.render(<GridComponents />, document.getElementById('root'));
 registerServiceWorker();
