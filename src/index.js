@@ -5,7 +5,8 @@ import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
 // import IconComponents from "./general/IconComponents";
 // import ButtonComponents from "./general/ButtonComponents";
-import GridComponents from "./layout/GridComponents";
+// import GridComponents from "./layout/GridComponents";
+import LayoutComponents from "./layout/LayoutComponents";
 
-ReactDOM.render(<GridComponents />, document.getElementById('root'));
+ReactDOM.render(<LayoutComponents />, document.getElementById('root'));
 registerServiceWorker();
