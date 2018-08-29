@@ -6,7 +6,8 @@ import registerServiceWorker from './registerServiceWorker';
 // import IconComponents from "./general/IconComponents";
 // import ButtonComponents from "./general/ButtonComponents";
 // import GridComponents from "./layout/GridComponents";
-import LayoutComponents from "./layout/LayoutComponents";
+// import LayoutComponents from "./layout/LayoutComponents";
+import AffixComponents from "./navigation/AffixComponents";
 
-ReactDOM.render(<LayoutComponents />, document.getElementById('root'));
+ReactDOM.render(<AffixComponents />, document.getElementById('root'));
 registerServiceWorker();
