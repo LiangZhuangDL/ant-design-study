@@ -11,7 +11,8 @@ import registerServiceWorker from './registerServiceWorker';
 // import AffixComponents from "./navigation/AffixComponents";
 // import BreadcrumbComponents from "./navigation/BreadcrumbComponents";
 // import DropdownComponents from "./navigation/DropdownComponents";
-import MenuComponents from "./navigation/MenuComponents";
+// import MenuComponents from "./navigation/MenuComponents";
+import PaginationComponents from "./navigation/PaginationComponents";
 
-ReactDOM.render(<MenuComponents />, document.getElementById('root'));
+ReactDOM.render(<PaginationComponents />, document.getElementById('root'));
 registerServiceWorker();
