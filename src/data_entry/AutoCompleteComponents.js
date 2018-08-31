@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, AutoComplete, message} from 'antd';
+import {Card, AutoComplete, message, Icon, Input} from 'antd';
 
 const style = {
     width: 1000,
@@ -8,6 +8,19 @@ const style = {
 };
 
 const data = ['期货大厦', '三丰大厦', '集电大厦'];
+
+const dataDown = [{
+    title: '话题',
+    children: [
+        {
+            title: '程序员',
+            count: 123542,
+        },
+        {
+            title: '工程师',
+            count: 32217,
+        }]
+}];
 
 export default class AutoCompleteComponents extends React.Component {
     constructor(props) {
@@ -66,7 +79,11 @@ export default class AutoCompleteComponents extends React.Component {
                     </AutoComplete>
                 </Card><br/>
                 <Card title='自定义搜索结果' style={style}>
-                    <AutoComplete allowClear style={{width: 200}} dataSource={data} placeholder='请输入您的单位地址' filterOption={(inputValue, option)=>option.props.children.indexOf(inputValue) !== -1}/>
+                    <AutoComplete allowClear style={{width: 200}} dataSource={data} placeholder='请输入您的单位地址'
+                                  filterOption={(inputValue, option) => option.props.children.indexOf(inputValue) !== -1}/>
+                </Card><br/>
+                <Card title='查询模式-确定类目' style={style}>
+
                 </Card>
             </div>
         )
