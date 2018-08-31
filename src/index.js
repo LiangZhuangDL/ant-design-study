@@ -18,11 +18,12 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {LocaleProvider} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import StepsComponents from "./navigation/StepsComponents";
+// import StepsComponents from "./navigation/StepsComponents";
+import AutoCompleteComponents from "./data_entry/AutoCompleteComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <StepsComponents/>
+        <AutoCompleteComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
