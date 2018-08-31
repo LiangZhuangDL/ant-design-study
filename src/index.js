@@ -4,6 +4,7 @@ import './index.css';
 import './navigation/BreadcrumbComponents.css'
 import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 // import IconComponents from "./general/IconComponents";
 // import ButtonComponents from "./general/ButtonComponents";
 // import GridComponents from "./layout/GridComponents";
@@ -13,6 +14,13 @@ import registerServiceWorker from './registerServiceWorker';
 // import DropdownComponents from "./navigation/DropdownComponents";
 // import MenuComponents from "./navigation/MenuComponents";
 import PaginationComponents from "./navigation/PaginationComponents";
+import {LocaleProvider} from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
+moment.locale('zh-cn');
 
-ReactDOM.render(<PaginationComponents />, document.getElementById('root'));
+ReactDOM.render(
+    <LocaleProvider locale={zhCN}>
+        <PaginationComponents/>
+    </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
