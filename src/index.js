@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import './navigation/BreadcrumbComponents.css'
+import './navigation/StepsComponents.css'
 import 'antd/dist/antd.css';
 import registerServiceWorker from './registerServiceWorker';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
@@ -13,14 +14,15 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 // import BreadcrumbComponents from "./navigation/BreadcrumbComponents";
 // import DropdownComponents from "./navigation/DropdownComponents";
 // import MenuComponents from "./navigation/MenuComponents";
-import PaginationComponents from "./navigation/PaginationComponents";
+// import PaginationComponents from "./navigation/PaginationComponents";
 import {LocaleProvider} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import StepsComponents from "./navigation/StepsComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <PaginationComponents/>
+        <StepsComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
