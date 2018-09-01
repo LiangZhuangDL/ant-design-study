@@ -20,7 +20,51 @@ const dataDown = [{
             title: '工程师',
             count: 32217,
         }]
+        },{
+    title: '问题',
+    children:[
+        {
+            title: '加班',
+            count: 2536,
+        },
+        {
+            title: '技术',
+            count: 265478,
+        },
+        {
+            title: '35岁',
+            count: 32324,
+        }
+    ]
 }];
+
+function renderTitle(title) {
+    return (
+        <span style={{textAlign: 'left'}}>
+            {title}
+            <a style={{float: 'right'}} target='_blank' rel='noopener noreferrer' href='https://www.baidu.com/s?wd=ant design'>
+                更多
+            </a>
+        </span>
+    );
+}
+
+const options = dataDown.map(group=>(
+    <AutoComplete.OptGroup key={group.title} label={renderTitle(group.title)}>
+        {group.children.map(opt=>(
+            <AutoComplete.Option key={opt.title} value={opt.title} style={{textAlign: 'left'}}>
+                {opt.title}
+                <span style={{float: 'right'}}>{opt.count}人 关注</span>
+            </AutoComplete.Option>
+        ))}
+    </AutoComplete.OptGroup>
+)).concat([
+    <AutoComplete.Option disabled key='all'>
+        <a style={{float: 'right'}} target='_blank' rel='noopener noreferrer' href='https://www.baidu.com/s?wd=ant design'>
+            查看所有结果
+        </a>
+    </AutoComplete.Option>
+]);
 
 export default class AutoCompleteComponents extends React.Component {
     constructor(props) {
@@ -83,6 +127,11 @@ export default class AutoCompleteComponents extends React.Component {
                                   filterOption={(inputValue, option) => option.props.children.indexOf(inputValue) !== -1}/>
                 </Card><br/>
                 <Card title='查询模式-确定类目' style={style}>
+                    <AutoComplete allowClear style={{width: 300, textAlign: 'left'}} dataSource={options} placeholder='请输入您的查询关键词' optionLabelProp='value'>
+                        <Input suffix={<Icon type="search" />} />
+                    </AutoComplete>
+                </Card><br/>
+                <Card title=''>
 
                 </Card>
             </div>
