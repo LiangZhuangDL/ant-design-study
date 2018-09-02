@@ -20,11 +20,12 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 // import StepsComponents from "./navigation/StepsComponents";
 // import AutoCompleteComponents from "./data_entry/AutoCompleteComponents";
-import CascaderComponents from "./data_entry/CascaderComponents";
+// import CascaderComponents from "./data_entry/CascaderComponents";
+import CheckboxComponents from "./data_entry/CheckboxComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <CascaderComponents/>
+        <CheckboxComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
