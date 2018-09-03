@@ -15,18 +15,19 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 // import DropdownComponents from "./navigation/DropdownComponents";
 // import MenuComponents from "./navigation/MenuComponents";
 // import PaginationComponents from "./navigation/PaginationComponents";
-import {LocaleProvider} from 'antd';
-import moment from 'moment';
-import 'moment/locale/zh-cn';
 // import StepsComponents from "./navigation/StepsComponents";
 // import AutoCompleteComponents from "./data_entry/AutoCompleteComponents";
 // import CascaderComponents from "./data_entry/CascaderComponents";
 // import CheckboxComponents from "./data_entry/CheckboxComponents";
-import DatePickerComponents from "./data_entry/DatePickerComponents";
+// import DatePickerComponents from "./data_entry/DatePickerComponents";
+import FormComponents from "./data_entry/FormComponents";
+import {LocaleProvider} from 'antd';
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <DatePickerComponents/>
+        <FormComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
