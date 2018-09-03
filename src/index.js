@@ -24,11 +24,12 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {LocaleProvider} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
-import InputComponents from "./data_entry/InputComponents";
+// import InputComponents from "./data_entry/InputComponents";
+import InputNumberComponents from "./data_entry/InputNumberComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <InputComponents/>
+        <InputNumberComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();

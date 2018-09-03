@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Card, Select, Icon, message} from 'antd';
+import {Input, Card, Select, Icon} from 'antd';
 
 const style = {
     width: 1000,
@@ -43,6 +43,9 @@ export default class InputComponents extends React.Component{
                         </Select>
                         <Input placeholder='您的电话号码' style={{width: 200}}/>
                     </Input.Group>
+                </Card><br/>
+                <Card title='文本域' style={style}>
+                    <Input.TextArea placeholder='设置最大值和最小值的文本域' autosize={{minRows: 4, maxRows: 10}}/>
                 </Card>
             </div>
         );
