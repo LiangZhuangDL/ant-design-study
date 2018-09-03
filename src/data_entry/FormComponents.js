@@ -35,13 +35,13 @@ class FormComponents extends React.Component{
             <div>
                 <Card title='水平登录栏' style={style}>
                     <Form layout='inline' onSubmit={this.handleSubmit}>
-                        <Form.Item validateStatus={userNameError? 'error': ''} help={userNameError || ''}>
+                        <Form.Item validateStatus={userNameError? 'error': ''} help={userNameError || ''} hasFeedback label='用户名' colon={true}>
                             {getFieldDecorator('userName', {rules: [{ required: true, message: '请填入您的用户名'}],})(
                                 <Input placeholder='用户名' prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}/>
                             )}
                         </Form.Item>
-                        <Form.Item validateStatus={passwordError? 'error': ''} help={passwordError || ''}>
-                            {getFieldDecorator('password', {rules: [{ required: true, message: '请填入您的密码'}],})(
+                        <Form.Item validateStatus={passwordError? 'error': ''} help={passwordError || ''} hasFeedback label='密码' colon={true}>
+                            {getFieldDecorator('password', {rules: [{ required: true, message: '请填入您的密码'}], initialValue: '123456'})(
                                 <Input type="password" placeholder='密码' prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}/>
                             )}
                         </Form.Item>
@@ -51,13 +51,13 @@ class FormComponents extends React.Component{
                     </Form>
                 </Card><br/>
                 <Card title='垂直登录栏' style={style}>
-                    <Form layout='vertical' onSubmit={this.handleSubmit} style={{width: 300, margin: 'auto'}}>
-                        <Form.Item validateStatus={userNameError? 'error': ''} help={userNameError || ''}>
+                    <Form layout='horizontal' onSubmit={this.handleSubmit}>
+                        <Form.Item validateStatus={userNameError? 'error': ''} help={userNameError || ''} label='用户名' colon={true} labelCol={{span: 4, offset: 3}} wrapperCol={{span: 12}}>
                             {getFieldDecorator('userName', {rules: [{ required: true, message: '请填入您的用户名'}],})(
                                 <Input placeholder='用户名' prefix={<Icon type='user' style={{color: 'rgba(0,0,0,.25)'}}/>}/>
                             )}
                         </Form.Item>
-                        <Form.Item validateStatus={passwordError? 'error': ''} help={passwordError || ''}>
+                        <Form.Item validateStatus={passwordError? 'error': ''} help={passwordError || ''} label='密码' colon={true} labelCol={{span: 4, offset: 3}} wrapperCol={{span: 12}}>
                             {getFieldDecorator('password', {rules: [{ required: true, message: '请填入您的密码'}],})(
                                 <Input type="password" placeholder='密码' prefix={<Icon type='lock' style={{color: 'rgba(0,0,0,.25)'}}/>}/>
                             )}

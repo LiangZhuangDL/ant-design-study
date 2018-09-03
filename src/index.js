@@ -20,14 +20,15 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 // import CascaderComponents from "./data_entry/CascaderComponents";
 // import CheckboxComponents from "./data_entry/CheckboxComponents";
 // import DatePickerComponents from "./data_entry/DatePickerComponents";
-import FormComponents from "./data_entry/FormComponents";
+// import FormComponents from "./data_entry/FormComponents";
 import {LocaleProvider} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import InputComponents from "./data_entry/InputComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <FormComponents/>
+        <InputComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
