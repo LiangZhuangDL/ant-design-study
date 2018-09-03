@@ -23,15 +23,38 @@ const options = [
 
 ];
 
+const defaultValue = [
+    '男',
+    '女',
+    '保密',
+];
+
 export default class CheckboxComponents extends React.Component{
     state = {
         disabled: false,
-        checked: false,
+        checked: true,
         indeterminate: false,
+        checkedList: defaultValue,
     };
 
     onChange = (e)=>{
       message.info(e);
+    };
+
+    onListChange = (checkedList)=>{
+        this.setState({
+            checkedList: checkedList,
+            indeterminate: checkedList.length < defaultValue.length && checkedList.length !== 0,
+            checked: checkedList.length === defaultValue.length,
+        });
+    };
+
+    onChangeAllChecked = (e)=>{
+        this.setState({
+            checked: e.target.checked,
+            checkedList: e.target.checked ? defaultValue: [],
+            indeterminate: this.state.checkedList.length !== 0 && this.state.checkedList.length !== defaultValue.length,
+        });
     };
 
     disableClick = ()=>{
@@ -48,7 +71,8 @@ export default class CheckboxComponents extends React.Component{
               </Card><br/>
               <Card title='受控多选框' style={style}>
                   <Button htmlType='button' onClick={this.disableClick}>不可用</Button><br/><br/>
-                  <Checkbox.Group options={options} onChange={this.onChange} defaultValue={['男']} disabled={this.state.disabled}/>
+                  <Checkbox onChange={this.onChangeAllChecked} indeterminate={this.state.indeterminate} checked={this.state.checked} disabled={this.state.disabled}>全选</Checkbox><br/>
+                  <Checkbox.Group options={options} onChange={this.onListChange} disabled={this.state.disabled} value={this.state.checkedList}/>
               </Card>
           </div>
         );

@@ -131,9 +131,6 @@ export default class AutoCompleteComponents extends React.Component {
                         <Input suffix={<Icon type="search" />} />
                     </AutoComplete>
                 </Card><br/>
-                <Card title=''>
-
-                </Card>
             </div>
         )
     }
