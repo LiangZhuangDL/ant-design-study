@@ -26,11 +26,12 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 // import InputComponents from "./data_entry/InputComponents";
 // import InputNumberComponents from "./data_entry/InputNumberComponents";
-import MentionComponents from "./data_entry/MentionComponents";
+// import MentionComponents from "./data_entry/MentionComponents";
+import RadioComponents from "./data_entry/RadioComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <MentionComponents/>
+        <RadioComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
