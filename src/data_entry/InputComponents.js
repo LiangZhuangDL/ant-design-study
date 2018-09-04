@@ -22,7 +22,6 @@ const selectAfter = (
     </Select>
 );
 
-
 export default class InputComponents extends React.Component{
     render(){
         return (
