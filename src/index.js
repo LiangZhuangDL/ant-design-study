@@ -30,11 +30,12 @@ import 'moment/locale/zh-cn';
 // import RadioComponents from "./data_entry/RadioComponents";
 // import RateComponents from "./data_entry/RateComponents";
 // import SelectComponents from "./data_entry/SelectComponents";
-import SkeletonComponents from "./data_entry/SkeletonComponents";
+// import SkeletonComponents from "./data_entry/SkeletonComponents";
+import SwitchComponents from "./data_entry/SwitchComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <SkeletonComponents/>
+        <SwitchComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
