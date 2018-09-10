@@ -67,6 +67,7 @@ class FormComponents extends React.Component{
                         </Form.Item>
                     </Form>
                 </Card><br/>
+                <p>未完结。。。</p>
             </div>
         );
     }
