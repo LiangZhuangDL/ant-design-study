@@ -34,11 +34,12 @@ import 'moment/locale/zh-cn';
 // import SwitchComponents from "./data_entry/SwitchComponents";
 // import SliderComponents from "./data_entry/SliderComponents";
 // import TreeSelectComponents from "./data_entry/TreeSelectComponents";
-import TimePickerComponents from "./data_entry/TimePickerComponents";
+// import TimePickerComponents from "./data_entry/TimePickerComponents";
+import TransferComponents from "./data_entry/TransferComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <TimePickerComponents/>
+        <TransferComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
