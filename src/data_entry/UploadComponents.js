@@ -89,7 +89,7 @@ export default class UploadComponents extends React.Component{
                         </Button>
                     </Upload>
                 </Card><br/>
-                <p>未完结。。。</p>
+                <p>未完结。。。。。。</p>
             </div>
         )
     }
