@@ -37,11 +37,12 @@ import 'moment/locale/zh-cn';
 // import TimePickerComponents from "./data_entry/TimePickerComponents";
 // import TransferComponents from "./data_entry/TransferComponents";
 // import UploadComponents from "./data_entry/UploadComponents";
-import AvatarComponents from "./data_display/AvatarComponents";
+// import AvatarComponents from "./data_display/AvatarComponents";
+import BadgeComponents from "./data_display/BadgeComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <AvatarComponents/>
+        <BadgeComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
