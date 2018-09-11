@@ -4,6 +4,7 @@ import './index.css';
 import './navigation/BreadcrumbComponents.css'
 import './navigation/StepsComponents.css'
 import 'antd/dist/antd.css';
+import './data_display/CarouselComponents.css'
 import registerServiceWorker from './registerServiceWorker';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 // import IconComponents from "./general/IconComponents";
@@ -40,11 +41,12 @@ import 'moment/locale/zh-cn';
 // import AvatarComponents from "./data_display/AvatarComponents";
 // import BadgeComponents from "./data_display/BadgeComponents";
 // import CalendarComponents from "./data_display/CalendarComponents";
-import CardComponents from "./data_display/CardComponents";
+// import CardComponents from "./data_display/CardComponents";
+import CarouselComponents from "./data_display/CarouselComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <CardComponents/>
+        <CarouselComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
