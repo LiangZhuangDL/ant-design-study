@@ -42,11 +42,12 @@ import 'moment/locale/zh-cn';
 // import BadgeComponents from "./data_display/BadgeComponents";
 // import CalendarComponents from "./data_display/CalendarComponents";
 // import CardComponents from "./data_display/CardComponents";
-import CarouselComponents from "./data_display/CarouselComponents";
+// import CarouselComponents from "./data_display/CarouselComponents";
+import CollapseComponents from "./data_display/CollapseComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <CarouselComponents/>
+        <CollapseComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
