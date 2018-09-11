@@ -30,6 +30,12 @@ const defaultFileList = [
     },
 ];
 
+function getBase64(img, callback){
+    const reader = new FileReader();
+    reader.addEventListener('load', ()=> callback(reader.result));
+    reader.readAsDataURL(img);
+};
+
 export default class UploadComponents extends React.Component{
     state = {
         loading: false,
@@ -42,7 +48,8 @@ export default class UploadComponents extends React.Component{
                 status: 'done',
                 url: 'http://img.hb.aicdn.com/231ec1ae0b968661004cecfb6d35c880b06dd13e33f64-D2Uuos_fw658'
             },
-        ]
+        ],
+        imageUrl: '',
     };
 
     handleCancel = ()=>{
@@ -56,12 +63,6 @@ export default class UploadComponents extends React.Component{
             previewImage: file.url || file.thumbUrl,
             previewVisible: true,
         })
-    };
-
-    getBase64 = (img, callback)=>{
-        const reader = new FileReader();
-        reader.addEventListener('load', ()=> callback(reader.result));
-        reader.readAsDataURL(img);
     };
 
     beforeUpload = (file)=>{
@@ -84,7 +85,12 @@ export default class UploadComponents extends React.Component{
             });
             return
         }
-    };
+        if (info.file.status === 'done') {
+            getBase64(info.file.originFileObj, imageUrl => this.setState({
+                imageUrl,
+                loading: false,
+            }));
+    }};
 
     onChange = (info)=>{
         if(info.file.status !== 'uploading'){
@@ -107,6 +113,13 @@ export default class UploadComponents extends React.Component{
             <div>
                 <Icon type="plus" />
                 <div className="ant-upload-text">上传</div>
+            </div>
+        );
+
+        const uploadImageButton = (
+            <div>
+                <Icon type={this.state.loading ? 'loading' : 'plus'} />
+                <div>Upload</div>
             </div>
         );
         return (
@@ -132,6 +145,11 @@ export default class UploadComponents extends React.Component{
                         </Button>
                     </Upload>
                 </Card><br/>
+                <Card title='用户头像' style={style}>
+                    <Upload name='avatar' action="//jsonplaceholder.typicode.com/posts/" listType='picture-card' showUploadList={false} beforeUpload={this.beforeUpload} onChange={this.handleImageChange}>
+                        {this.state.imageUrl ? <img src={this.state.imageUrl} alt="avatar" /> : uploadImageButton}
+                    </Upload>
+                </Card><br/>
                 <Card title='照片墙' style={style}>
                     <Upload action="//jsonplaceholder.typicode.com/posts/" listType="picture-card" fileList={this.state.fileList} onPreview={this.handlePreview} onChange={this.handleChange} multiple>
                         {uploadButton}
@@ -140,7 +158,6 @@ export default class UploadComponents extends React.Component{
                         <img alt="example" style={{ width: '100%' }} src={this.state.previewImage} />
                     </Modal>
                 </Card>
-                <p>未完结。。。</p>
             </div>
         )
     }
