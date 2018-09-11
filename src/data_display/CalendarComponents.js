@@ -50,7 +50,7 @@ export default class CalendarComponents extends React.Component{
             value,
             selectedValue: value,
         });
-    }
+    };
 
     render(){
         return (

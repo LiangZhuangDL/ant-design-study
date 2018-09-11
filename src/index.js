@@ -39,11 +39,12 @@ import 'moment/locale/zh-cn';
 // import UploadComponents from "./data_entry/UploadComponents";
 // import AvatarComponents from "./data_display/AvatarComponents";
 // import BadgeComponents from "./data_display/BadgeComponents";
-import CalendarComponents from "./data_display/CalendarComponents";
+// import CalendarComponents from "./data_display/CalendarComponents";
+import CardComponents from "./data_display/CardComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <CalendarComponents/>
+        <CardComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
