@@ -8,9 +8,11 @@
     "moment": "^2.22.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
+    "react-infinite-scroller": "^1.2.0",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "reqwest": "^2.0.5"
   },
   "scripts": {
     "start": "react-scripts start",
