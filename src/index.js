@@ -45,11 +45,12 @@ import 'moment/locale/zh-cn';
 // import CarouselComponents from "./data_display/CarouselComponents";
 // import CollapseComponents from "./data_display/CollapseComponents";
 // import ListComponents from "./data_display/ListComponents";
-import PopoverComponents from "./data_display/PopoverComponents";
+// import PopoverComponents from "./data_display/PopoverComponents";
+import TooltipComponents from "./data_display/TooltipComponents";
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <PopoverComponents/>
+        <TooltipComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
