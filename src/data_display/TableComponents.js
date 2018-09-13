@@ -508,6 +508,7 @@ export default class TableComponents extends React.Component {
                 <Card style={style} title='固定头和列'>
                     <Table columns={columnFixed} dataSource={dataFixed} pagination={{pageSize: 20}} scroll={{ x: 1200, y: 500}}/>
                 </Card><br/>
+                <p>未完待续</p>
             </div>
         )
     }
