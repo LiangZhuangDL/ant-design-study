@@ -25,6 +25,7 @@ import zhCN from 'antd/lib/locale-provider/zh_CN';
 import {LocaleProvider} from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
+import EditableTable from "./data_display/EditableTable";
 // import InputComponents from "./data_entry/InputComponents";
 // import InputNumberComponents from "./data_entry/InputNumberComponents";
 // import MentionComponents from "./data_entry/MentionComponents";
@@ -47,11 +48,12 @@ import 'moment/locale/zh-cn';
 // import ListComponents from "./data_display/ListComponents";
 // import PopoverComponents from "./data_display/PopoverComponents";
 // import TooltipComponents from "./data_display/TooltipComponents";
-import TableComponents from "./data_display/TableComponents";
+// import TableComponents from "./data_display/TableComponents";
+
 moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <TableComponents/>
+        <EditableTable/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
