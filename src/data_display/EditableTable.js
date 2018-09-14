@@ -21,7 +21,7 @@ const EditableFormRow = Form.create()(EditableRow);
 class EditableCell extends React.Component {
     state = {
         editing: false,
-    }
+    };
 
     componentDidMount() {
         if (this.props.editable) {
@@ -161,7 +161,7 @@ export default class EditableTable extends React.Component {
     handleDelete = (key) => {
         const dataSource = [...this.state.dataSource];
         this.setState({ dataSource: dataSource.filter(item => item.key !== key) });
-    }
+    };
 
     handleAdd = () => {
         const { count, dataSource } = this.state;
@@ -175,7 +175,7 @@ export default class EditableTable extends React.Component {
             dataSource: [...dataSource, newData],
             count: count + 1,
         });
-    }
+    };
 
     handleSave = (row) => {
         const newData = [...this.state.dataSource];
@@ -186,7 +186,7 @@ export default class EditableTable extends React.Component {
             ...row,
         });
         this.setState({ dataSource: newData });
-    }
+    };
 
     render() {
         const { dataSource } = this.state;

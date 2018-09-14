@@ -44,7 +44,6 @@ const IconText = ({ type, text }) => (
   </span>
 );
 
-
 const count = 4;
 
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat&noinfo`;
