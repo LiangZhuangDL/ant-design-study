@@ -31,7 +31,8 @@ import 'moment/locale/zh-cn';
 // import TimelineComponents from "./data_display/TimelineComponents";
 // import TreeComponents from "./data_display/TreeComponents";
 // import AlertComponents from "./feedback/AlertComponents";
-import DrawerComponents from "./feedback/DrawerComponents";
+// import DrawerComponents from "./feedback/DrawerComponents";
+import ModalComponents from "./feedback/ModalComponents";
 // import InputComponents from "./data_entry/InputComponents";
 // import InputNumberComponents from "./data_entry/InputNumberComponents";
 // import MentionComponents from "./data_entry/MentionComponents";
@@ -60,6 +61,6 @@ moment.locale('zh-cn');
 
 ReactDOM.render(
     <LocaleProvider locale={zhCN}>
-        <DrawerComponents/>
+        <ModalComponents/>
     </LocaleProvider>, document.getElementById('root'));
 registerServiceWorker();
