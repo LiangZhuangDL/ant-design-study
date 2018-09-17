@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card,Modal, Button} from 'antd';
+import {Card, Modal, Button} from 'antd';
 
 const style = {
     width: 1000,
